@@ -7,15 +7,12 @@ require "taiwanese_id_builder/version"
 Gem::Specification.new do |s|
   s.name        = "taiwanese_id_builder"
   s.version     = TaiwaneseIdBuilder::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of TaiwaneseIdBuilder."
-  s.description = "TODO: Description of TaiwaneseIdBuilder."
+  s.authors     = ["Wayne Chu"]
+  s.email       = ["wayne.5540@gmail.com"]
+  s.homepage    = "https://github.com/wayne5540/taiwanese_id_builder"
+  s.summary     = "Taiwanese Id Builder"
+  s.description = "Taiwanese Id Builder."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.0.8"
-
-  s.add_development_dependency "sqlite3"
 end
