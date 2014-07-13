@@ -2,23 +2,40 @@
 
 ## 安裝
 
-Gemfile ：
+Gemfile：
 
 ```
 gem 'taiwanese_id_builder'
 ```
 
-
-
 執行
 
-`bundle install`
+```
+bundle install`
+```
 
-## 使用
+## 驗證身分證字號
 
-`TaiwaneseIdBuilder.valid?('A123456789') #=> true`
+```
+TaiwaneseIdBuilder.valid?('A123456789') #=> true
+```
 
-`TaiwaneseIdBuilder.valid?('A123456777') #=> false`
+```
+TaiwaneseIdBuilder.valid?('A123456777') #=> false
+```
+## 產生身分證字號
+
+```
+TaiwaneseIdBuilder.generate #=> 隨機產生身分證字號
+```
+
+```
+TaiwaneseIdBuilder.generate("male") #=> 男性的身分證字號
+```
+
+```
+TaiwaneseIdBuilder.generate("female") #=> 女性的身分證字號
+```
 
 ## LICENSE
 
