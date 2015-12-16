@@ -95,8 +95,9 @@ module TaiwaneseIdBuilder
     else
       return false
     end
-
   end
+
+  private
 
   def self.calculate_weighted_sum(digits)
     sum = 0
