@@ -4,15 +4,16 @@ $:.push File.expand_path("../lib", __FILE__)
 require "taiwanese_id_builder/version"
 
 # Describe your gem and declare its dependencies:
-Gem::Specification.new do |s|
-  s.name        = "taiwanese_id_builder"
-  s.version     = TaiwaneseIdBuilder::VERSION
-  s.authors     = ["Wayne Chu"]
-  s.email       = ["wayne.5540@gmail.com"]
-  s.homepage    = "https://github.com/wayne5540/taiwanese_id_builder"
-  s.summary     = "Taiwanese Id Builder"
-  s.description = "Taiwanese Id Builder."
+Gem::Specification.new do |spec|
+  spec.name        = "taiwanese_id_builder"
+  spec.version     = TaiwaneseIdBuilder::VERSION
+  spec.authors     = ["Wayne Chu"]
+  spec.email       = ["wayne.5540@gmail.com"]
+  spec.homepage    = "https://github.com/wayne5540/taiwanese_id_builder"
+  spec.summary     = "Taiwanese Id Builder"
+  spec.description = "Taiwanese Id Builder."
+  spec.add_development_dependency "rspec"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
 end
