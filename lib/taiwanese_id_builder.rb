@@ -81,7 +81,6 @@ module TaiwaneseIdBuilder
     # twid_array = twid.chars
 
     # 拿出第一個英文字母並轉成數字
-    puts twid
     first_letter = twid[0]
     other_letters = twid[1..-1]
 
