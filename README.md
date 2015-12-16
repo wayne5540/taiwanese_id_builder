@@ -42,9 +42,8 @@ TaiwaneseIdBuilder.generate("female") #=> 女性的身分證字號
 
 ## TODO
 
-* 加上 Spec
-* Refactor
 * 做成 rails validation
+* Refactor TaiwaneseIdBuilder.generate
 
 ## LICENSE
 
