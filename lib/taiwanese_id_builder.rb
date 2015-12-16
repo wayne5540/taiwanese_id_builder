@@ -1,13 +1,13 @@
 module TaiwaneseIdBuilder
 
   TWID_LETTER = {
-    "A" => 10, "B" => 11, "C" => 12, "D" => 13,
-    "E" => 14, "F" => 15, "G" => 16, "H" => 17,
-    "I" => 34, "J" => 18, "K" => 19, "L" => 20,
-    "M" => 21, "N" => 22, "O" => 35, "P" => 23,
-    "Q" => 24, "R" => 25, "S" => 26, "T" => 27,
-    "U" => 28, "V" => 29, "W" => 32, "X" => 30,
-    "Y" => 31, "Z" => 33
+    "A" => [1, 0], "B" => [1, 1], "C" => [1, 2], "D" => [1, 3],
+    "E" => [1, 4], "F" => [1, 5], "G" => [1, 6], "H" => [1, 7],
+    "I" => [3, 4], "J" => [1, 8], "K" => [1, 9], "L" => [2, 0],
+    "M" => [2, 1], "N" => [2, 2], "O" => [3, 5], "P" => [2, 3],
+    "Q" => [2, 4], "R" => [2, 5], "S" => [2, 6], "T" => [2, 7],
+    "U" => [2, 8], "V" => [2, 9], "W" => [3, 2], "X" => [3, 0],
+    "Y" => [3, 1], "Z" => [3, 3]
   }
 
   MULTIPLIER = [1,9,8,7,6,5,4,3,2,1,1].freeze
@@ -20,8 +20,10 @@ module TaiwaneseIdBuilder
 
     first_letter = TWID_LETTER.keys.sample
 
-    sum += TWID_LETTER[first_letter]/10 * MULTIPLIER[0]
-    sum += TWID_LETTER[first_letter]%10 * MULTIPLIER[1]
+    sum += TWID_LETTER[first_letter][0] * MULTIPLIER[0]
+    sum += TWID_LETTER[first_letter][1] * MULTIPLIER[1]
+
+
     twid += first_letter.to_s
 
     case gender
@@ -72,29 +74,17 @@ module TaiwaneseIdBuilder
   end
 
   def self.valid?(twid, case_sensitive = true)
-
     twid = twid.upcase unless case_sensitive
 
     return false if twid.length != 10
     return false if !( /[A-Z](1|2)\d{8}\z/ =~ twid )
 
-    # twid_array = twid.chars
-
-    # 拿出第一個英文字母並轉成數字
-    first_letter = twid[0]
-    other_letters = twid[1..-1]
-
-    digital_twid = TWID_LETTER[first_letter].to_s + other_letters
-
-    digits = digital_twid.chars.map(&:to_i)
+    characters = twid.chars
+    digits = TWID_LETTER[characters.shift] + characters.map(&:to_i)
 
     weighted_sum = calculate_weighted_sum(digits)
 
-    if weighted_sum % 10 == 0
-      return true
-    else
-      return false
-    end
+    return weighted_sum % 10 == 0
   end
 
   private
