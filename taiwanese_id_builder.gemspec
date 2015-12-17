@@ -13,6 +13,11 @@ Gem::Specification.new do |spec|
   spec.summary     = "Taiwanese Id Builder"
   spec.description = "Taiwanese Id Builder."
   spec.add_development_dependency "rspec"
+  spec.post_install_message = <<-MESSAGE
+!    The 'taiwanese_id_builder' gem has been deprecated and has been replaced by 'taiwanese_id_validator'.
+!    See: https://rubygems.org/gems/taiwanese_id_validator
+!    And: https://github.com/wayne5540/taiwanese_id_validator
+MESSAGE
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
