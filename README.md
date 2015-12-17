@@ -1,5 +1,5 @@
 
-This gem is deprecated and moved to [Taiwanese Id Validator](https://github.com/wayne5540/taiwanese_id_validator).
+# This gem is deprecated and moved to [Taiwanese Id Validator](https://github.com/wayne5540/taiwanese_id_validator).
 
 
 # [Deprecated] TaiwaneseIdBuilder 台灣身分證字號驗證
